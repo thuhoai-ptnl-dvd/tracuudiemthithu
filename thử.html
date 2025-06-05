@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-1870J5MY0T"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());    gtag('config', 'G-1870J5MY0T'); </script>    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Coderthemes" name="author" />
+
+    <title> Lớp học tương tác online </title>
+<meta name="keywords" content="Lớp học tương tác online" />
+<meta name="description" content="Lớp học tương tác online" />
+<meta name="abstract" content="Lớp học tương tác online" />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="https://848662053f.vws.vegacdn.vn/favicon.ico">
+
+
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/lib/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/lib/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/lib/slick-1.8.1/slick/slick.css" rel="stylesheet" />
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/lib/select2/css/select2.min.css" rel="stylesheet" />
+
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/lib/datatables/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/lib/datatables/fixedColumns.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/css/base.css" rel="stylesheet" />
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/css/style-layout.css" rel="stylesheet" />
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/css/style.css" rel="stylesheet" />
+    <link href="https://848662053f.vws.vegacdn.vn/style_v2/css/styledetail.css" rel="stylesheet" />
+    <style>
+        html {
+            overflow: hidden;
+        }
+    </style>
+    
+    <script>
+        const mode = localStorage.getItem("layoutMode")
+        if (mode === "dark-mode") {
+            const html = document.getElementsByTagName("html")[0];
+            html.classList.add("dark-mode");
+        }
+    </script>
+
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/datatables/datatables.min.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/datatables/dataTables.bootstrap5.min.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/datatables/fixedColumns.bootstrap5.min.js"></script>
+
+
+
+
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/sweetalert2/sweetalert2.min.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/toastr/toastr.min.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/lib/select2/js/select2.min.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/js/function.js"></script>
+
+</head>
+
+<body class="">
+    <div class="wrapper">
+        <div class="content-page">
+            <input type="hidden" id="userSchoolLevelCode" value="04" />
+<input type="hidden" id="userSchoolCode" value="790007B7" />
+<input type="hidden" id="userSchoolBlockCode" value="12" />
+<header class="header shadow-bottom bg-dark-mode-while bg-while" id="jsLayoutContainerHeader">
+    <div class="navbar-custom">
+        <div class="topbar d-flex w-100 justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-lg-2 gap-4 topbar-logo">
+                <!-- Topbar Brand Logo -->
+                <div class="logo-topbar d-flex align-items-center">
+                    <div class="lines custom-tooltip" title-tooltip="Menu" data-toggle="toogle-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-qi icon-qi-menu icon-color-default">
+    <path d="M2 19.7857C2 20.4563 2.54365 21 3.21428 21H20.7857C21.4563 21 22 20.4563 22 19.7857C22 19.1151 21.4563 18.5714 20.7857 18.5714H3.21428C2.54365 18.5714 2 19.1151 2 19.7857ZM2 12.5C2 13.1706 2.54365 13.7143 3.21428 13.7143H20.7857C21.4563 13.7143 22 13.1706 22 12.5C22 11.8294 21.4563 11.2857 20.7857 11.2857H3.21428C2.54365 11.2857 2 11.8294 2 12.5ZM3.21428 4C2.54365 4 2 4.54365 2 5.21428C2 5.88491 2.54365 6.42857 3.21428 6.42857H20.7857C21.4563 6.42857 22 5.88491 22 5.21428C22 4.54365 21.4563 4 20.7857 4H3.21428Z" fill="#243648" />
+</svg>
+                    </div>
+                    <a href="/"
+                       class="logo-light">
+                        <span class="logo custom-tooltip" title-tooltip="Trang chủ">
+                            <img src="https://848662053f.vws.vegacdn.vn/img/LogoHCM.png" alt="logo" />
+                        </span>
+                    </a>
+                </div>
+                <div class="d-none d-sm-block">
+                    <div class="text-h5 bold">Sở Giáo dục và Đào tạo Thành phố Hồ Chí Minh</div>
+                    <div style="font-size: 16px; line-height: 18px;">
+THPT Dương Văn Dương                    </div>
+                </div>
+            </div>
+<form action="/search" class="form-search d-md-block d-none" method="get">                <div class="input-group" id="jsInputSearch">
+                    <span class="input-group-text">
+                        <img src="/style_v2/img/icon-search.svg"
+                             alt="Tìm kiếm">
+                    </span>
+                    <input type="text"
+                           name="SearchKey"
+                           class="form-control bg-dark-mode-disable bg-while js-input-search"
+                           value=""
+                           placeholder="Bạn muốn tìm gì?">
+                </div>
+</form>            <div class="wrap-search-suggest"
+                 id="jsWrapSearchSuggest">
+                <div class="box-search-suggest  bg-dark-mode-while bg-while"
+                     id="jsWrapSearchSuggestContent">
+<form action="/search" class="form-search  d-md-none d-block mb-4" method="get">                        <div class="input-group" id="jsInputSearch">
+                            <span class="input-group-text">
+                                <img src="/style_v2/img/icon-search.svg"
+                                     alt="Tìm kiếm">
+                            </span>
+                            <input type="text"
+                                   name="SearchKey"
+                                   value=""
+                                   class="form-control bg-dark-mode-disable bg-while js-input-search"
+                                   placeholder="Bạn muốn tìm gì?">
+                        </div>
+</form>                    <div class="" id="jsAjaxContentSearch">
+
+                    </div>
+                </div>
+            </div>
+
+            <ul class="topbar-menu d-flex align-items-center justify-content-end">
+                <li class="d-inline-block d-md-none">
+                <a class="jsOpenSearch">
+                <img src="/style_v2/img/icon-search.svg"
+                alt="Tìm kiếm">
+                </a>
+                </li>
+                <li class="d-inline-block dropdown">
+                    <span class="bg-dark-mode-disable bg-disable jsDropdowmToggle dropdowm-button"
+                    >
+                        <span class="header-tooltip custom-tooltip" title-tooltip="Tiện ích">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="icon-qi icon-window icon-color-default">
+    <path d="M5.06462 3.03231C5.06462 4.15472 4.15472 5.06462 3.03231 5.06462C1.9099 5.06462 1 4.15472 1 3.03231C1 1.9099 1.9099 1 3.03231 1C4.15472 1 5.06462 1.9099 5.06462 3.03231Z" fill="#243648" />
+    <path d="M5.06462 10.0011C5.06462 11.1235 4.15472 12.0334 3.03231 12.0334C1.9099 12.0334 1 11.1235 1 10.0011C1 8.87865 1.9099 7.96875 3.03231 7.96875C4.15472 7.96875 5.06462 8.87865 5.06462 10.0011Z" fill="#243648" />
+    <path d="M5.06462 16.8682C5.06462 17.9907 4.15472 18.9006 3.03231 18.9006C1.9099 18.9006 1 17.9907 1 16.8682C1 15.7458 1.9099 14.8359 3.03231 14.8359C4.15472 14.8359 5.06462 15.7458 5.06462 16.8682Z" fill="#243648" />
+    <path d="M12.0334 3.03231C12.0334 4.15472 11.1235 5.06462 10.0011 5.06462C8.87865 5.06462 7.96875 4.15472 7.96875 3.03231C7.96875 1.9099 8.87865 1 10.0011 1C11.1235 1 12.0334 1.9099 12.0334 3.03231Z" fill="#243648" />
+    <path d="M12.0334 10.0011C12.0334 11.1235 11.1235 12.0334 10.0011 12.0334C8.87865 12.0334 7.96875 11.1235 7.96875 10.0011C7.96875 8.87865 8.87865 7.96875 10.0011 7.96875C11.1235 7.96875 12.0334 8.87865 12.0334 10.0011Z" fill="#243648" />
+    <path d="M12.0334 16.8682C12.0334 17.9907 11.1235 18.9006 10.0011 18.9006C8.87865 18.9006 7.96875 17.9907 7.96875 16.8682C7.96875 15.7458 8.87865 14.8359 10.0011 14.8359C11.1235 14.8359 12.0334 15.7458 12.0334 16.8682Z" fill="#243648" />
+    <path d="M18.9982 3.03231C18.9982 4.15472 18.0883 5.06462 16.9659 5.06462C15.8435 5.06462 14.9336 4.15472 14.9336 3.03231C14.9336 1.9099 15.8435 1 16.9659 1C18.0883 1 18.9982 1.9099 18.9982 3.03231Z" fill="#243648" />
+    <path d="M18.9982 10.0011C18.9982 11.1235 18.0883 12.0334 16.9659 12.0334C15.8435 12.0334 14.9336 11.1235 14.9336 10.0011C14.9336 8.87865 15.8435 7.96875 16.9659 7.96875C18.0883 7.96875 18.9982 8.87865 18.9982 10.0011Z" fill="#243648" />
+    <path d="M18.9982 16.8682C18.9982 17.9907 18.0883 18.9006 16.9659 18.9006C15.8435 18.9006 14.9336 17.9907 14.9336 16.8682C14.9336 15.7458 15.8435 14.8359 16.9659 14.8359C18.0883 14.8359 18.9982 15.7458 18.9982 16.8682Z" fill="#243648" />
+</svg>
+                        </span>
+                    </span>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0 dropdown-custom bg-dark-mode-disable bg-while dropdown-tien-ich jsDropdownNotClose">
+                        <div class="list-dropdown-icon text-h6">
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="/" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-2.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            LMS- vStudy
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="https://web.enetviet.com/" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-3.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            eNetViet
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="https://thuvien.edu.vn/" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-4.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            Thư Viện
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="https://csdl.hcm.edu.vn" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-1.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            Quản lý trường học
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="https://hsdttruong.qlgd.edu.vn/" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-5.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            Hồ sơ điện tử
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="https://enetpay.vn/PhieuThu/QuanLyPhieuThu.aspx" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-6.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            Quản lý khoản thu
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="/" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-7.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            Điểm danh
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="https://kdcltruong.qlgd.edu.vn/" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-8.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            Kiểm định chất lượng
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-dropdown-icon-item">
+                                    <a class="dropdown-icon-item bg-dark-mode-disable-hover bg-default-hover"
+                                       href="/" target="_blank">
+                                        <span class="icon">
+                                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-tien-ich-9.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                                        </span>
+
+                                        <span class="name-tien-ich">
+                                            Học bạ điện tử
+                                        </span>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </li>
+                    <li class="d-inline-block dropdown dropdown-tab">
+                        <span class="bg-dark-mode-disable bg-disable jsDropdowmToggle custom-tooltip dropdowm-button" id="jsBtnOpenNotification"
+                              title-tooltip="Thông báo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-qi icon-notify icon-color-default">
+    <path d="M20.5767 16.2905L20.5767 16.2904L20.5755 16.2885L19.6891 14.875C19.6888 14.8746 19.6886 14.8742 19.6883 14.8738C19.589 14.7079 19.4855 14.4569 19.4004 14.1897C19.3156 13.9236 19.2526 13.6528 19.2298 13.4501L18.846 8.48464L18.846 8.48439C18.627 5.71015 16.6966 3.279 14.0385 2.33069C13.7551 1.5595 12.9934 1.0502 12.1204 1.0502C11.2659 1.0502 10.5099 1.58603 10.2056 2.32952C7.54582 3.277 5.61401 5.70901 5.3949 8.48439L5.39488 8.48464L5.01104 13.4505C4.98822 13.6653 4.92515 13.9421 4.84052 14.2077C4.75514 14.4756 4.65189 14.7192 4.55426 14.8711L4.55425 14.8711L4.55336 14.8725L3.66536 16.2885L3.66523 16.2887C3.16828 17.0838 3.04926 17.9127 3.42156 18.5775C3.79263 19.2401 4.55024 19.5902 5.49643 19.5902H18.7444C19.692 19.5902 20.4241 19.2393 20.7946 18.5787C21.1674 17.9386 21.0732 17.1097 20.5767 16.2905ZM19.6949 17.9966L19.6946 17.9965L19.6903 18.0051C19.6401 18.1054 19.538 18.193 19.3743 18.2563C19.2106 18.3197 18.9963 18.3542 18.7444 18.3542H5.49643C4.96948 18.3542 4.65431 18.1946 4.52448 17.9768C4.41819 17.7583 4.45977 17.3885 4.73526 16.9523L4.73551 16.9519L5.62351 15.5359L5.62354 15.5359L5.62506 15.5334C5.9258 15.0321 6.19532 14.1711 6.26937 13.5541L6.2695 13.5541L6.26999 13.5478L6.65397 8.58004C6.84085 6.22057 8.59583 4.11158 10.9142 3.43227C11.1382 3.368 11.3231 3.15324 11.3565 2.92819C11.4167 2.59362 11.7371 2.3102 12.1204 2.3102C12.5116 2.3102 12.8456 2.59994 12.8835 2.92172L12.8836 2.9228C12.9159 3.1813 13.1083 3.36988 13.3272 3.43242L13.3684 3.28826L13.3263 3.43215C15.6444 4.1112 17.4 6.24403 17.5869 8.58016L17.9709 13.5478L17.9709 13.5482C18.0209 14.173 18.3169 15.0352 18.6158 15.5334L18.6158 15.5334L18.6174 15.5359L19.5038 16.9494C19.504 16.9498 19.5043 16.9502 19.5045 16.9506C19.7845 17.4177 19.8195 17.7829 19.6949 17.9966ZM12.1204 22.9502C12.8825 22.9502 13.5625 22.4225 14.0506 21.904C14.5379 21.3866 14.8664 20.8434 14.9367 20.7181C15.1221 20.4334 15.0317 20.0265 14.7159 19.8623C14.4227 19.6731 14.0461 19.7797 13.864 20.0826C13.7006 20.3511 13.4074 20.7614 13.075 21.1025C12.9088 21.2731 12.7364 21.4226 12.569 21.5286C12.3998 21.6356 12.2482 21.6902 12.1204 21.6902C11.9926 21.6902 11.8411 21.6356 11.6719 21.5286C11.5045 21.4226 11.3321 21.2731 11.1659 21.1025C10.8343 20.7622 10.5417 20.353 10.378 20.0845C10.2181 19.8004 9.83991 19.6752 9.52541 19.8623C9.24085 20.0219 9.1153 20.4004 9.30249 20.7152C9.36916 20.8346 9.69909 21.3824 10.1902 21.904C10.6784 22.4225 11.3584 22.9502 12.1204 22.9502Z" fill="#243648" stroke="#243648" stroke-width="0.3" />
+</svg>
+                                <span class="number-notification jsCountNotifySeen" data-seen="8">
+8                                </span>
+                        </span>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0 dropdown-custom bg-dark-mode-disable bg-while dropdown-notify jsDropdownNotClose">
+                            <div class="list-dropdown-notify text-h6">
+                                <div class="title-topbar-notify text-h3 bold">
+                                    Thông báo
+                                </div>
+                                <ul class="nav nav-tabs"
+                                    id="jsTabNotify"
+                                    role="tablist">
+                                    <li class="nav-item">
+                                        <button class="nav-link active"
+                                                id="tab-all"
+                                                data-bs-toggle="tab"
+                                                data-bs-target="#tab-all-content"
+                                                type="button" role="tab"
+                                                aria-selected="true"
+                                                data-toggle="tab" href="#tab-all-content">
+                                            Tất
+                                            cả
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link"
+                                                id="tab-chua-doc"
+                                                data-bs-toggle="tab"
+                                                data-bs-target="#tab-chua-doc-content"
+                                                type="button"
+                                                data-toggle="tab" href="#tab-chua-doc-content">
+                                            Chưa đọc
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content"
+                                     id="tabContentNotify">
+                                    <div class="tab-pane fade show active"
+                                         id="tab-all-content">
+                                        <ul class="list-notify-header jsTabNotifyTarget" id="jsNotificationAll">
+                                            <li class="jsNotificationXemThem d-none" data-url="/notification">
+                                                Xem thêm
+                                            </li>
+                                            <li class="jsLoadingNotification d-none" style="
+                                                text-align: center;
+                                                padding: 10px;
+                                                    ">
+                                                <div class="spinner-border spinner-border-sm"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane fade"
+                                         id="tab-chua-doc-content"
+                                         role="tabpanel">
+                                        <ul class="list-notify-header jsTabNotifyTarget" id="jsNotificationChuaDoc">
+                                            <li class="jsNotificationXemThem d-none" data-url="/notification?isSeen=false">
+                                                Xem thêm
+                                            </li>
+                                            <li class="jsLoadingNotification d-none" style="
+                                                text-align: center;
+                                                padding: 10px;
+                                                    ">
+                                                <div class="spinner-border spinner-border-sm"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-inline-block dropdown">
+                        <span class="bg-dark-mode-disable bg-disable jsDropdowmToggle dropdowm-button" style="background-color: #964F4D; color: #fff; font-size: 14px;"
+                        >
+                            <span class="account-user-avatar">
+
+                                D
+                            </span>
+                        </span>
+                        <div class="dropdown-menu dropdowm-profile dropdown-menu-end dropdown-menu-animated profile-dropdown dropdown-custom bg-dark-mode-disable bg-while">
+                            <!-- item-->
+                            <a href="/thong-tin-thi-sinh"
+                               class="dropdown-item text-h6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="icon-qi icon-user icon-color-default">
+    <path d="M10.0001 9.78516C12.2534 9.78516 13.9584 7.75516 13.9584 5.41016C13.9584 3.06515 12.2534 1.03516 10.0001 1.03516C7.74678 1.03516 6.04175 3.06515 6.04175 5.41016C6.04175 7.75516 7.74678 9.78516 10.0001 9.78516Z" stroke="#61646B" stroke-width="1.25" />
+    <path d="M2.5 17.6125C2.5 14.3251 5.16497 11.6602 8.45238 11.6602H11.5476C14.835 11.6602 17.5 14.3251 17.5 17.6125V17.6125C17.5 18.007 17.1802 18.3268 16.7857 18.3268H3.21429C2.8198 18.3268 2.5 18.007 2.5 17.6125V17.6125Z" stroke="#61646B" stroke-width="1.25" />
+</svg>
+                                <span>Tài khoản của tôi</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="/thong-tin-thi-sinh?tab=ChangePassword"
+                               class="dropdown-item text-h6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="icon-qi icon-password icon-color-default">
+<g clip-path="url(#clip0_771_39925)">
+<path d="M15 7.41667H14.5833V6C14.5833 3.47298 12.527 1.41667 10 1.41667C7.47298 1.41667 5.41667 3.47298 5.41667 6V7.41667H5C4.12698 7.41667 3.41667 8.12698 3.41667 9V17C3.41667 17.873 4.12698 18.5833 5 18.5833H15C15.873 18.5833 16.5833 17.873 16.5833 17V9C16.5833 8.12698 15.873 7.41667 15 7.41667ZM6.58333 6C6.58333 4.11602 8.11602 2.58333 10 2.58333C11.884 2.58333 13.4167 4.11602 13.4167 6V7.41667H6.58333V6ZM15.4167 17C15.4167 17.1105 15.3728 17.2165 15.2946 17.2946C15.2165 17.3728 15.1105 17.4167 15 17.4167H5C4.88949 17.4167 4.78351 17.3728 4.70537 17.2946C4.62723 17.2165 4.58333 17.1105 4.58333 17V9C4.58333 8.88949 4.62723 8.78351 4.70537 8.70537C4.78351 8.62723 4.88949 8.58333 5 8.58333H15C15.1105 8.58333 15.2165 8.62723 15.2946 8.70537C15.3728 8.78351 15.4167 8.88949 15.4167 9V17Z" fill="#243648" stroke="#243648" stroke-width="0.166667"/>
+</g>
+<defs>
+<clipPath id="clip0_771_39925">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+                                <span>Đổi mật khẩu</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="/dang-xuat"
+                               class="dropdown-item text-h6 text-primary-red-color">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"class="icon-qi icon-logout icon-color-danger">
+    <path d="M8.29297 16.584H4.05469V3.48438H8.29297C8.75586 3.4707 9.12695 3.0918 9.12695 2.625C9.12695 2.1582 8.75586 1.7793 8.29297 1.76562H3.36133C2.79688 1.76562 2.33594 2.22656 2.33594 2.79102V17.2773C2.33594 17.8418 2.79688 18.3027 3.36133 18.3027H8.29297C8.75586 18.2891 9.12695 17.9102 9.12695 17.4434C9.12695 16.9766 8.75586 16.5977 8.29297 16.584Z" fill="#243648"/>
+    <path d="M17.3496 9.43018L14.1465 6.22705C13.8125 5.89307 13.2656 5.89307 12.9316 6.22705C12.5977 6.56104 12.5977 7.10791 12.9316 7.44189L14.6055 9.11572H8.45703C7.94922 9.11572 7.53516 9.53174 7.53516 10.0376C7.53516 10.5454 7.95117 10.9595 8.45703 10.9595H14.6035L12.9297 12.6333C12.5957 12.9673 12.5957 13.5142 12.9297 13.8481C13.2637 14.1821 13.8105 14.1821 14.1445 13.8481L17.3477 10.645C17.6836 10.311 17.6836 9.76416 17.3496 9.43018Z" fill="#243648" />
+</svg>
+                                <span>Đăng xuất</span>
+                            </a>
+                        </div>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+            <div class="content-main">
+                <div class="main-left bg-dark-mode-while bg-while">
+                    <div class="leftside-menu">
+    <ul>
+            <li>
+                <a href="/" 
+               class="bg-dark-mode-default-hover bg-default-hover r-2 ">
+                    <span class="icon-menu">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-home.svg?v=1" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                    </span>
+                    Trang chủ
+                </a>
+            </li>
+            <li>
+                <a href="/bai-tap-ve-nha" 
+               class="bg-dark-mode-default-hover bg-default-hover r-2 ">
+                    <span class="icon-menu">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-bai-tap.svg?v=1" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                    </span>
+                    Bài tập
+                </a>
+            </li>
+            <li>
+                <a href="/bai-giang" 
+               class="bg-dark-mode-default-hover bg-default-hover r-2 ">
+                    <span class="icon-menu">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-bai-giang.svg?v=1" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                    </span>
+                    Bài giảng, khóa học
+                </a>
+            </li>
+            <li>
+                <a href="/ky-thi-luyen-tap" 
+               class="bg-dark-mode-default-hover bg-default-hover r-2 ">
+                    <span class="icon-menu">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-kiem-tra.svg?v=1" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                    </span>
+                    Kỳ thi ôn tập
+                </a>
+            </li>
+            <li>
+                <a href="/ky-thi-chinh-thuc" 
+               class="bg-dark-mode-default-hover bg-default-hover r-2 ">
+                    <span class="icon-menu">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-kiem-tra-chinh-thuc.svg?v=1" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                    </span>
+                    Kỳ thi <br /> chính thức
+                </a>
+            </li>
+            <li>
+                <a href="/hoc-truc-tuyen" 
+               class="bg-dark-mode-default-hover bg-default-hover r-2 ">
+                    <span class="icon-menu">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-hoc-vien-dien-tu.svg?v=1" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                    </span>
+                    Học liệu <br /> điện tử
+                </a>
+            </li>
+            <li>
+                <a href="/lop-hoc-tuong-tac-online" 
+               class="bg-dark-mode-default-hover bg-default-hover r-2 active">
+                    <span class="icon-menu">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-lop-hoc.svg?v=1" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                    </span>
+                    Lớp học tương tác
+                </a>
+            </li>
+            <li>
+                <a href="/lich-su-hoc-tap" 
+               class="bg-dark-mode-default-hover bg-default-hover r-2 ">
+                    <span class="icon-menu">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/icon-lich-su.svg?v=1" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon" />
+                    </span>
+                    Lịch sử  <br /> học tập
+                </a>
+            </li>
+    </ul>
+
+</div>
+<div class="leftside-menu-footer text-disable-color text-h6">
+    <div class="text-line-1">
+        SỞ GD&amp;ĐT TP HỒ CHÍ MINH
+    </div>
+    <div class="text-line-1">
+        Phiên bản 3
+    </div>
+</div>
+                </div>
+                <div class="main-right">
+                    <div class="box-shadow-main">
+                        <script>
+    window.onpopstate = function (event) {
+        // Xử lý sự kiện khi người dùng nhấn nút "Quay lại" ở trình duyệt
+        // Thực hiện các hành động bạn muốn ở đây, ví dụ: điều hướng hoặc cập nhật dữ liệu
+        window.location.reload();
+    };
+</script>
+<div class="container-fluid p-0 custom-container-big">
+    <div class="row">
+        <div class="col-12 col-xl-12">
+            <div class="wrap-list-home">
+                <section class="wrap-bai-giang">
+                    <div class="d-flex justify-content-between align-items-center gap-4" id="jsFilterContainer">
+                        <div class="filter-classonline filter-list-container">
+                            <h4 class="title-home text-h3 bold mb-0">
+                                <span>
+                                    Lớp học tương tác
+                                    online
+                                </span>
+                            </h4>
+<form action="/lop-hoc-tuong-tac-online" class="form-filter custom-container-lg p-0" id="jsFormFilter" method="get">                                <div class="wrap-container-tab-filter"></div>
+</form>                            <div class="wrap-filter-action">
+                                
+<div class="box-type-display d-inline-flex gap-3 align-items-center">
+    <div class="">
+        <label class="" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xem dưới dạng danh sách">
+            <input type="radio"
+                   class="d-none jsGetDataFilter jsNotResetPageIndex"
+                   name="TypeViewDisplay"
+                   form="jsFormFilter"
+                   value="List"
+            >
+            <span class="icon-list-table icon-list r-2">
+                <img src="/style_v2/img/icon-list-table.svg"
+                     alt="icon list">
+            </span>
+        </label>
+    </div>
+    <div class="">
+        <label class="" title="Xem dưới dạng danh lưới" data-bs-toggle="tooltip" data-bs-placement="bottom">
+            <input type="radio"
+                   class="d-none jsGetDataFilter jsNotResetPageIndex"
+                   name="TypeViewDisplay"
+                   form="jsFormFilter"
+                   value="Item"
+            checked>
+            <span class="icon-list-column icon-list r-2">
+                <img src="/style_v2/img/icon-list-column.svg"
+                     alt="icon column">
+            </span>
+        </label>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid p-0 custom-container-md">
+                        <div class="list-bai-giang p-0" id="jsLoadContentAjax">
+                            
+
+<div class="row container-list-paging">
+
+            <div class="col-12">
+                <div class="row">
+
+<div class="col-item-qi-1-6 col-xxxl-2 col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 col-class-online-item jsContainerClassOnline">
+    <div class="class-online-item">
+        <a class="box-class-online-item box-bai-giang d-block bg-dark-mode-while bg-while r-2 p-3 jsClassOnlineLink"
+        >
+            <div class="image mb-2">
+                        <span class="img-padding r-1 r-bl-0 r-br-0">
+                            <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/image-default-classonline.png" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="12B8 MÔN SINH" />
+                        </span>
+
+            </div>
+            <div class="name mb-2">
+                <span class="text-line-2 text-h6 bold " title="12B8 MÔN SINH">
+                    12B8 MÔN SINH
+                </span>
+            </div>
+            <div class="info text-h7 mb-8 d-flex align-items-center justify-content-between text-secondary-color">
+                <span class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" class="icon-qi icon-date icon-color-secondary icon-qi-sm">
+    <path d="M9.85536 1.91016C9.96454 1.91016 10.0698 1.95083 10.1506 2.02424C10.2315 2.09765 10.282 2.19853 10.2925 2.30721L10.2946 2.34938V3.08141H11.6122C11.9229 3.08141 12.2208 3.20481 12.4404 3.42447C12.6601 3.64412 12.7835 3.94203 12.7835 4.25267V11.8658C12.7835 12.1765 12.6601 12.4744 12.4404 12.694C12.2208 12.9137 11.9229 13.0371 11.6122 13.0371H3.41344C3.10281 13.0371 2.80489 12.9137 2.58524 12.694C2.36559 12.4744 2.24219 12.1765 2.24219 11.8658V4.25267C2.24219 3.94203 2.36559 3.64412 2.58524 3.42447C2.80489 3.20481 3.10281 3.08141 3.41344 3.08141H4.73111V2.34938C4.73116 2.23658 4.77461 2.12813 4.85245 2.04649C4.93029 1.96486 5.03655 1.9163 5.14922 1.91088C5.26189 1.90546 5.37232 1.94359 5.45764 2.01738C5.54296 2.09116 5.59662 2.19494 5.6075 2.30721L5.60955 2.34938V3.08141H9.41613V2.34938C9.41613 2.23289 9.46241 2.12117 9.54478 2.0388C9.62715 1.95643 9.73887 1.91016 9.85536 1.91016ZM11.9051 6.59518H3.12063V11.8658C3.12063 11.9043 3.1282 11.9424 3.14292 11.9779C3.15763 12.0134 3.1792 12.0457 3.20639 12.0729C3.23358 12.1001 3.26586 12.1216 3.30139 12.1364C3.33691 12.1511 3.37499 12.1587 3.41344 12.1587H11.6122C11.6899 12.1587 11.7644 12.1278 11.8193 12.0729C11.8742 12.018 11.9051 11.9435 11.9051 11.8658V6.59518ZM4.73111 3.95986H3.41344C3.37499 3.95986 3.33691 3.96743 3.30139 3.98214C3.26586 3.99686 3.23358 4.01843 3.20639 4.04562C3.1792 4.07281 3.15763 4.10509 3.14292 4.14061C3.1282 4.17614 3.12063 4.21422 3.12063 4.25267V5.71674H11.9051V4.25267C11.9051 4.17501 11.8742 4.10053 11.8193 4.04562C11.7644 3.99071 11.6899 3.95986 11.6122 3.95986H10.2946V4.39908C10.2945 4.51187 10.2511 4.62033 10.1732 4.70196C10.0954 4.78359 9.98913 4.83215 9.87646 4.83757C9.7638 4.84299 9.65336 4.80486 9.56805 4.73108C9.48273 4.65729 9.42907 4.55351 9.41818 4.44124L9.41613 4.39908V3.95986H5.60955V4.39908C5.60949 4.51187 5.56605 4.62033 5.48821 4.70196C5.41037 4.78359 5.3041 4.83215 5.19144 4.83757C5.07877 4.84299 4.96834 4.80486 4.88302 4.73108C4.7977 4.65729 4.74404 4.55351 4.73316 4.44124L4.73111 4.39908V3.95986Z" fill="#243648" />
+    <path d="M5.02463 7.61719C5.13743 7.61724 5.24588 7.66069 5.32752 7.73853C5.40915 7.81637 5.45771 7.92263 5.46313 8.0353C5.46855 8.14797 5.43042 8.2584 5.35663 8.34372C5.28285 8.42904 5.17907 8.4827 5.0668 8.49358L5.02463 8.49563H4.439C4.32621 8.49557 4.21776 8.45212 4.13612 8.37429C4.05449 8.29645 4.00593 8.19018 4.00051 8.07752C3.99509 7.96485 4.03322 7.85442 4.107 7.7691C4.18079 7.68378 4.28457 7.63012 4.39684 7.61924L4.439 7.61719H5.02463ZM7.80637 7.61719C7.91916 7.61724 8.02762 7.66069 8.10925 7.73853C8.19088 7.81637 8.23944 7.92263 8.24486 8.0353C8.25028 8.14797 8.21215 8.2584 8.13837 8.34372C8.06458 8.42904 7.9608 8.4827 7.84853 8.49358L7.80637 8.49563H7.22074C7.10794 8.49557 6.99949 8.45212 6.91786 8.37429C6.83622 8.29645 6.78766 8.19018 6.78224 8.07752C6.77682 7.96485 6.81495 7.85442 6.88874 7.7691C6.96252 7.68378 7.0663 7.63012 7.17857 7.61924L7.22074 7.61719H7.80637ZM10.5881 7.61719C10.7009 7.61724 10.8094 7.66069 10.891 7.73853C10.9726 7.81637 11.0212 7.92263 11.0266 8.0353C11.032 8.14797 10.9939 8.2584 10.9201 8.34372C10.8463 8.42904 10.7425 8.4827 10.6303 8.49358L10.5881 8.49563H10.0025C9.88968 8.49557 9.78122 8.45212 9.69959 8.37429C9.61796 8.29645 9.5694 8.19018 9.56398 8.07752C9.55856 7.96485 9.59669 7.85442 9.67047 7.7691C9.74426 7.68378 9.84804 7.63012 9.96031 7.61924L10.0025 7.61719H10.5881ZM5.02463 9.9597C5.13743 9.95976 5.24588 10.0032 5.32752 10.081C5.40915 10.1589 5.45771 10.2651 5.46313 10.3778C5.46855 10.4905 5.43042 10.6009 5.35663 10.6862C5.28285 10.7715 5.17907 10.8252 5.0668 10.8361L5.02463 10.8381H4.439C4.32621 10.8381 4.21776 10.7946 4.13612 10.7168C4.05449 10.639 4.00593 10.5327 4.00051 10.42C3.99509 10.3074 4.03322 10.1969 4.107 10.1116C4.18079 10.0263 4.28457 9.97264 4.39684 9.96175L4.439 9.9597H5.02463ZM7.80637 9.9597C7.91916 9.95976 8.02762 10.0032 8.10925 10.081C8.19088 10.1589 8.23944 10.2651 8.24486 10.3778C8.25028 10.4905 8.21215 10.6009 8.13837 10.6862C8.06458 10.7715 7.9608 10.8252 7.84853 10.8361L7.80637 10.8381H7.22074C7.10794 10.8381 6.99949 10.7946 6.91786 10.7168C6.83622 10.639 6.78766 10.5327 6.78224 10.42C6.77682 10.3074 6.81495 10.1969 6.88874 10.1116C6.96252 10.0263 7.0663 9.97264 7.17857 9.96175L7.22074 9.9597H7.80637ZM10.5881 9.9597C10.7009 9.95976 10.8094 10.0032 10.891 10.081C10.9726 10.1589 11.0212 10.2651 11.0266 10.3778C11.032 10.4905 10.9939 10.6009 10.9201 10.6862C10.8463 10.7715 10.7425 10.8252 10.6303 10.8361L10.5881 10.8381H10.0025C9.88968 10.8381 9.78122 10.7946 9.69959 10.7168C9.61796 10.639 9.5694 10.5327 9.56398 10.42C9.55856 10.3074 9.59669 10.1969 9.67047 10.1116C9.74426 10.0263 9.84804 9.97264 9.96031 9.96175L10.0025 9.9597H10.5881Z" fill="#243648" />
+</svg>
+19h00                </span>
+                    <span class="google-meet btn-qi btn-qi-xs btn-qi-default">
+                        <img data-src="/style_v2/img/icon-google-meet.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon google meet" />
+                        Google
+                        meet
+                    </span>
+            </div>
+
+                    <span class="btn-qi btn-qi-sm w-100 btn-qi-danger jsCountTimeClassOnline cursor-default btn-qi-not-hover" data-count="3168.0772704" data-href="https://meet.google.com/ctt-gtdg-zjz">
+                        --:--:--
+                    </span>
+
+        </a>
+    </div>
+</div>
+<div class="col-item-qi-1-6 col-xxxl-2 col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 col-class-online-item jsContainerClassOnline">
+    <div class="class-online-item">
+        <a class="box-class-online-item box-bai-giang d-block bg-dark-mode-while bg-while r-2 p-3 "
+        >
+            <div class="image mb-2">
+                    <span class="img-padding r-1 r-bl-0 r-br-0 ">
+                        <img data-src="https://848662053f.vws.vegacdn.vn/style_v2/img/image-default-classonline.png" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="11B07 MÔN SINH" />
+                    </span>
+
+            </div>
+            <div class="name mb-2">
+                <span class="text-line-2 text-h6 bold text-disable-color" title="11B07 MÔN SINH">
+                    11B07 MÔN SINH
+                </span>
+            </div>
+            <div class="info text-h7 mb-8 d-flex align-items-center justify-content-between text-disable-color">
+                <span class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" class="icon-qi icon-date icon-color-secondary icon-qi-sm">
+    <path d="M9.85536 1.91016C9.96454 1.91016 10.0698 1.95083 10.1506 2.02424C10.2315 2.09765 10.282 2.19853 10.2925 2.30721L10.2946 2.34938V3.08141H11.6122C11.9229 3.08141 12.2208 3.20481 12.4404 3.42447C12.6601 3.64412 12.7835 3.94203 12.7835 4.25267V11.8658C12.7835 12.1765 12.6601 12.4744 12.4404 12.694C12.2208 12.9137 11.9229 13.0371 11.6122 13.0371H3.41344C3.10281 13.0371 2.80489 12.9137 2.58524 12.694C2.36559 12.4744 2.24219 12.1765 2.24219 11.8658V4.25267C2.24219 3.94203 2.36559 3.64412 2.58524 3.42447C2.80489 3.20481 3.10281 3.08141 3.41344 3.08141H4.73111V2.34938C4.73116 2.23658 4.77461 2.12813 4.85245 2.04649C4.93029 1.96486 5.03655 1.9163 5.14922 1.91088C5.26189 1.90546 5.37232 1.94359 5.45764 2.01738C5.54296 2.09116 5.59662 2.19494 5.6075 2.30721L5.60955 2.34938V3.08141H9.41613V2.34938C9.41613 2.23289 9.46241 2.12117 9.54478 2.0388C9.62715 1.95643 9.73887 1.91016 9.85536 1.91016ZM11.9051 6.59518H3.12063V11.8658C3.12063 11.9043 3.1282 11.9424 3.14292 11.9779C3.15763 12.0134 3.1792 12.0457 3.20639 12.0729C3.23358 12.1001 3.26586 12.1216 3.30139 12.1364C3.33691 12.1511 3.37499 12.1587 3.41344 12.1587H11.6122C11.6899 12.1587 11.7644 12.1278 11.8193 12.0729C11.8742 12.018 11.9051 11.9435 11.9051 11.8658V6.59518ZM4.73111 3.95986H3.41344C3.37499 3.95986 3.33691 3.96743 3.30139 3.98214C3.26586 3.99686 3.23358 4.01843 3.20639 4.04562C3.1792 4.07281 3.15763 4.10509 3.14292 4.14061C3.1282 4.17614 3.12063 4.21422 3.12063 4.25267V5.71674H11.9051V4.25267C11.9051 4.17501 11.8742 4.10053 11.8193 4.04562C11.7644 3.99071 11.6899 3.95986 11.6122 3.95986H10.2946V4.39908C10.2945 4.51187 10.2511 4.62033 10.1732 4.70196C10.0954 4.78359 9.98913 4.83215 9.87646 4.83757C9.7638 4.84299 9.65336 4.80486 9.56805 4.73108C9.48273 4.65729 9.42907 4.55351 9.41818 4.44124L9.41613 4.39908V3.95986H5.60955V4.39908C5.60949 4.51187 5.56605 4.62033 5.48821 4.70196C5.41037 4.78359 5.3041 4.83215 5.19144 4.83757C5.07877 4.84299 4.96834 4.80486 4.88302 4.73108C4.7977 4.65729 4.74404 4.55351 4.73316 4.44124L4.73111 4.39908V3.95986Z" fill="#243648" />
+    <path d="M5.02463 7.61719C5.13743 7.61724 5.24588 7.66069 5.32752 7.73853C5.40915 7.81637 5.45771 7.92263 5.46313 8.0353C5.46855 8.14797 5.43042 8.2584 5.35663 8.34372C5.28285 8.42904 5.17907 8.4827 5.0668 8.49358L5.02463 8.49563H4.439C4.32621 8.49557 4.21776 8.45212 4.13612 8.37429C4.05449 8.29645 4.00593 8.19018 4.00051 8.07752C3.99509 7.96485 4.03322 7.85442 4.107 7.7691C4.18079 7.68378 4.28457 7.63012 4.39684 7.61924L4.439 7.61719H5.02463ZM7.80637 7.61719C7.91916 7.61724 8.02762 7.66069 8.10925 7.73853C8.19088 7.81637 8.23944 7.92263 8.24486 8.0353C8.25028 8.14797 8.21215 8.2584 8.13837 8.34372C8.06458 8.42904 7.9608 8.4827 7.84853 8.49358L7.80637 8.49563H7.22074C7.10794 8.49557 6.99949 8.45212 6.91786 8.37429C6.83622 8.29645 6.78766 8.19018 6.78224 8.07752C6.77682 7.96485 6.81495 7.85442 6.88874 7.7691C6.96252 7.68378 7.0663 7.63012 7.17857 7.61924L7.22074 7.61719H7.80637ZM10.5881 7.61719C10.7009 7.61724 10.8094 7.66069 10.891 7.73853C10.9726 7.81637 11.0212 7.92263 11.0266 8.0353C11.032 8.14797 10.9939 8.2584 10.9201 8.34372C10.8463 8.42904 10.7425 8.4827 10.6303 8.49358L10.5881 8.49563H10.0025C9.88968 8.49557 9.78122 8.45212 9.69959 8.37429C9.61796 8.29645 9.5694 8.19018 9.56398 8.07752C9.55856 7.96485 9.59669 7.85442 9.67047 7.7691C9.74426 7.68378 9.84804 7.63012 9.96031 7.61924L10.0025 7.61719H10.5881ZM5.02463 9.9597C5.13743 9.95976 5.24588 10.0032 5.32752 10.081C5.40915 10.1589 5.45771 10.2651 5.46313 10.3778C5.46855 10.4905 5.43042 10.6009 5.35663 10.6862C5.28285 10.7715 5.17907 10.8252 5.0668 10.8361L5.02463 10.8381H4.439C4.32621 10.8381 4.21776 10.7946 4.13612 10.7168C4.05449 10.639 4.00593 10.5327 4.00051 10.42C3.99509 10.3074 4.03322 10.1969 4.107 10.1116C4.18079 10.0263 4.28457 9.97264 4.39684 9.96175L4.439 9.9597H5.02463ZM7.80637 9.9597C7.91916 9.95976 8.02762 10.0032 8.10925 10.081C8.19088 10.1589 8.23944 10.2651 8.24486 10.3778C8.25028 10.4905 8.21215 10.6009 8.13837 10.6862C8.06458 10.7715 7.9608 10.8252 7.84853 10.8361L7.80637 10.8381H7.22074C7.10794 10.8381 6.99949 10.7946 6.91786 10.7168C6.83622 10.639 6.78766 10.5327 6.78224 10.42C6.77682 10.3074 6.81495 10.1969 6.88874 10.1116C6.96252 10.0263 7.0663 9.97264 7.17857 9.96175L7.22074 9.9597H7.80637ZM10.5881 9.9597C10.7009 9.95976 10.8094 10.0032 10.891 10.081C10.9726 10.1589 11.0212 10.2651 11.0266 10.3778C11.032 10.4905 10.9939 10.6009 10.9201 10.6862C10.8463 10.7715 10.7425 10.8252 10.6303 10.8361L10.5881 10.8381H10.0025C9.88968 10.8381 9.78122 10.7946 9.69959 10.7168C9.61796 10.639 9.5694 10.5327 9.56398 10.42C9.55856 10.3074 9.59669 10.1969 9.67047 10.1116C9.74426 10.0263 9.84804 9.97264 9.96031 9.96175L10.0025 9.9597H10.5881Z" fill="#243648" />
+</svg>
+23/11/2024                </span>
+                    <span class="google-meet btn-qi btn-qi-xs btn-qi-disabled">
+                        <img data-src="/style_v2/img/icon-google-meet.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon google meet" />
+                        Google
+                        meet
+                    </span>
+            </div>
+
+                <span class="btn-qi btn-qi-sm w-100 btn-qi-disabled">
+                    Đã kết thúc
+                </span>
+
+        </a>
+    </div>
+</div>
+<div class="col-item-qi-1-6 col-xxxl-2 col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 col-class-online-item jsContainerClassOnline">
+    <div class="class-online-item">
+        <a class="box-class-online-item box-bai-giang d-block bg-dark-mode-while bg-while r-2 p-3 "
+        >
+            <div class="image mb-2">
+                    <span class="img-padding r-1 r-bl-0 r-br-0 ">
+                        <img data-src="https://tracnghiem-anh.sgp1.digitaloceanspaces.com/79/790007B7/AFiles/LMS/polymer9158cad8-7b5a-4fd1-9b17-71b9f4cb54f4.jpg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="12B08-Hoá-Cô Thơ" />
+                    </span>
+
+            </div>
+            <div class="name mb-2">
+                <span class="text-line-2 text-h6 bold text-disable-color" title="12B08-Hoá-Cô Thơ">
+                    12B08-Hoá-Cô Thơ
+                </span>
+            </div>
+            <div class="info text-h7 mb-8 d-flex align-items-center justify-content-between text-disable-color">
+                <span class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" class="icon-qi icon-date icon-color-secondary icon-qi-sm">
+    <path d="M9.85536 1.91016C9.96454 1.91016 10.0698 1.95083 10.1506 2.02424C10.2315 2.09765 10.282 2.19853 10.2925 2.30721L10.2946 2.34938V3.08141H11.6122C11.9229 3.08141 12.2208 3.20481 12.4404 3.42447C12.6601 3.64412 12.7835 3.94203 12.7835 4.25267V11.8658C12.7835 12.1765 12.6601 12.4744 12.4404 12.694C12.2208 12.9137 11.9229 13.0371 11.6122 13.0371H3.41344C3.10281 13.0371 2.80489 12.9137 2.58524 12.694C2.36559 12.4744 2.24219 12.1765 2.24219 11.8658V4.25267C2.24219 3.94203 2.36559 3.64412 2.58524 3.42447C2.80489 3.20481 3.10281 3.08141 3.41344 3.08141H4.73111V2.34938C4.73116 2.23658 4.77461 2.12813 4.85245 2.04649C4.93029 1.96486 5.03655 1.9163 5.14922 1.91088C5.26189 1.90546 5.37232 1.94359 5.45764 2.01738C5.54296 2.09116 5.59662 2.19494 5.6075 2.30721L5.60955 2.34938V3.08141H9.41613V2.34938C9.41613 2.23289 9.46241 2.12117 9.54478 2.0388C9.62715 1.95643 9.73887 1.91016 9.85536 1.91016ZM11.9051 6.59518H3.12063V11.8658C3.12063 11.9043 3.1282 11.9424 3.14292 11.9779C3.15763 12.0134 3.1792 12.0457 3.20639 12.0729C3.23358 12.1001 3.26586 12.1216 3.30139 12.1364C3.33691 12.1511 3.37499 12.1587 3.41344 12.1587H11.6122C11.6899 12.1587 11.7644 12.1278 11.8193 12.0729C11.8742 12.018 11.9051 11.9435 11.9051 11.8658V6.59518ZM4.73111 3.95986H3.41344C3.37499 3.95986 3.33691 3.96743 3.30139 3.98214C3.26586 3.99686 3.23358 4.01843 3.20639 4.04562C3.1792 4.07281 3.15763 4.10509 3.14292 4.14061C3.1282 4.17614 3.12063 4.21422 3.12063 4.25267V5.71674H11.9051V4.25267C11.9051 4.17501 11.8742 4.10053 11.8193 4.04562C11.7644 3.99071 11.6899 3.95986 11.6122 3.95986H10.2946V4.39908C10.2945 4.51187 10.2511 4.62033 10.1732 4.70196C10.0954 4.78359 9.98913 4.83215 9.87646 4.83757C9.7638 4.84299 9.65336 4.80486 9.56805 4.73108C9.48273 4.65729 9.42907 4.55351 9.41818 4.44124L9.41613 4.39908V3.95986H5.60955V4.39908C5.60949 4.51187 5.56605 4.62033 5.48821 4.70196C5.41037 4.78359 5.3041 4.83215 5.19144 4.83757C5.07877 4.84299 4.96834 4.80486 4.88302 4.73108C4.7977 4.65729 4.74404 4.55351 4.73316 4.44124L4.73111 4.39908V3.95986Z" fill="#243648" />
+    <path d="M5.02463 7.61719C5.13743 7.61724 5.24588 7.66069 5.32752 7.73853C5.40915 7.81637 5.45771 7.92263 5.46313 8.0353C5.46855 8.14797 5.43042 8.2584 5.35663 8.34372C5.28285 8.42904 5.17907 8.4827 5.0668 8.49358L5.02463 8.49563H4.439C4.32621 8.49557 4.21776 8.45212 4.13612 8.37429C4.05449 8.29645 4.00593 8.19018 4.00051 8.07752C3.99509 7.96485 4.03322 7.85442 4.107 7.7691C4.18079 7.68378 4.28457 7.63012 4.39684 7.61924L4.439 7.61719H5.02463ZM7.80637 7.61719C7.91916 7.61724 8.02762 7.66069 8.10925 7.73853C8.19088 7.81637 8.23944 7.92263 8.24486 8.0353C8.25028 8.14797 8.21215 8.2584 8.13837 8.34372C8.06458 8.42904 7.9608 8.4827 7.84853 8.49358L7.80637 8.49563H7.22074C7.10794 8.49557 6.99949 8.45212 6.91786 8.37429C6.83622 8.29645 6.78766 8.19018 6.78224 8.07752C6.77682 7.96485 6.81495 7.85442 6.88874 7.7691C6.96252 7.68378 7.0663 7.63012 7.17857 7.61924L7.22074 7.61719H7.80637ZM10.5881 7.61719C10.7009 7.61724 10.8094 7.66069 10.891 7.73853C10.9726 7.81637 11.0212 7.92263 11.0266 8.0353C11.032 8.14797 10.9939 8.2584 10.9201 8.34372C10.8463 8.42904 10.7425 8.4827 10.6303 8.49358L10.5881 8.49563H10.0025C9.88968 8.49557 9.78122 8.45212 9.69959 8.37429C9.61796 8.29645 9.5694 8.19018 9.56398 8.07752C9.55856 7.96485 9.59669 7.85442 9.67047 7.7691C9.74426 7.68378 9.84804 7.63012 9.96031 7.61924L10.0025 7.61719H10.5881ZM5.02463 9.9597C5.13743 9.95976 5.24588 10.0032 5.32752 10.081C5.40915 10.1589 5.45771 10.2651 5.46313 10.3778C5.46855 10.4905 5.43042 10.6009 5.35663 10.6862C5.28285 10.7715 5.17907 10.8252 5.0668 10.8361L5.02463 10.8381H4.439C4.32621 10.8381 4.21776 10.7946 4.13612 10.7168C4.05449 10.639 4.00593 10.5327 4.00051 10.42C3.99509 10.3074 4.03322 10.1969 4.107 10.1116C4.18079 10.0263 4.28457 9.97264 4.39684 9.96175L4.439 9.9597H5.02463ZM7.80637 9.9597C7.91916 9.95976 8.02762 10.0032 8.10925 10.081C8.19088 10.1589 8.23944 10.2651 8.24486 10.3778C8.25028 10.4905 8.21215 10.6009 8.13837 10.6862C8.06458 10.7715 7.9608 10.8252 7.84853 10.8361L7.80637 10.8381H7.22074C7.10794 10.8381 6.99949 10.7946 6.91786 10.7168C6.83622 10.639 6.78766 10.5327 6.78224 10.42C6.77682 10.3074 6.81495 10.1969 6.88874 10.1116C6.96252 10.0263 7.0663 9.97264 7.17857 9.96175L7.22074 9.9597H7.80637ZM10.5881 9.9597C10.7009 9.95976 10.8094 10.0032 10.891 10.081C10.9726 10.1589 11.0212 10.2651 11.0266 10.3778C11.032 10.4905 10.9939 10.6009 10.9201 10.6862C10.8463 10.7715 10.7425 10.8252 10.6303 10.8361L10.5881 10.8381H10.0025C9.88968 10.8381 9.78122 10.7946 9.69959 10.7168C9.61796 10.639 9.5694 10.5327 9.56398 10.42C9.55856 10.3074 9.59669 10.1969 9.67047 10.1116C9.74426 10.0263 9.84804 9.97264 9.96031 9.96175L10.0025 9.9597H10.5881Z" fill="#243648" />
+</svg>
+23/11/2024                </span>
+                    <span class="google-meet btn-qi btn-qi-xs btn-qi-disabled">
+                        <img data-src="/style_v2/img/icon-google-meet.svg" class="lazyload" src="/style_v2/img/image-loading-default.svg" alt="icon google meet" />
+                        Google
+                        meet
+                    </span>
+            </div>
+
+                <span class="btn-qi btn-qi-sm w-100 btn-qi-disabled">
+                    Đã kết thúc
+                </span>
+
+        </a>
+    </div>
+</div>                </div>
+            </div>
+</div>
+<div class="row ">
+    <div class="col-12">
+        <style>
+    .box-shadow-main {
+        padding-bottom: 0;
+    }
+
+    .main-right {
+        overflow: hidden;
+    }
+</style>
+
+<div class="pagination-custom " id="jsPaginateContainer">
+    <div class="pagination-size">
+        <span class="text-h6">
+            Hiển
+            thị
+        </span>
+        <select class="form-select bg-while custom-select text-h5 jsGetDataFilter select2" data-val="true" data-val-required="The PageSize field is required." form="jsFormFilter" id="PageSize" name="PageSize"><option value="1">1</option>
+<option value="5">5</option>
+<option value="10">10</option>
+<option selected="selected" value="50">50</option>
+<option value="100">100</option>
+<option value="150">150</option>
+<option value="200">200</option>
+</select>
+        <span class="text-h6">
+            <span class="d-none d-sm-inline">
+                hiển
+                thị
+                50
+                trên
+                1
+                trang
+            </span>
+            <span class="d-sm-none d-inline">
+                / 1
+                trang
+            </span>
+
+
+        </span>
+    </div>
+    <div class="pagination-index">
+        <ul>
+            <li class="page-item-custom disabled jsPaginationLink">
+                <a class="page-link-custom bg-dark-mode-while bg-while" href=""
+                   data-index="0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none"class="icon-qi icon-arrow-left icon-color-default">
+<g opacity="0.9">
+<g clip-path="url(#clip0_776_6151)">
+<path d="M6.91915 9.05336L3.28062 5.41483C3.06011 5.19431 3.06011 4.9738 3.28062 4.75328C3.50114 4.53276 3.72166 4.53276 3.94217 4.75328L7.58071 8.39181C7.80122 8.61233 7.80122 8.83285 7.58071 9.05336C7.36019 9.27388 7.13967 9.27388 6.91915 9.05336Z" fill="#333F48"/>
+<path d="M7.58071 1.67264L3.94218 5.31117C3.72166 5.53169 3.50114 5.53169 3.28063 5.31117C3.06011 5.09066 3.06011 4.87014 3.28063 4.64962L6.91916 1.01109C7.13967 0.790574 7.36019 0.790574 7.58071 1.01109C7.80122 1.23161 7.80122 1.45213 7.58071 1.67264Z" fill="#333F48"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_776_6151">
+<rect x="10.8125" y="9.94531" width="9.82353" height="9.82353" rx="4.91176" transform="rotate(-180 10.8125 9.94531)" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+                </a>
+            </li>
+            <li class="page-item-custom">
+                <input class="page-link-custom text-h5  bg-dark-mode-while bg-while jsPaginationInput jsPaginationInputDisplay  text-secondary-color" disabled
+                       type="number" value="1" max="1" />
+                <input class="jsPaginationInput" form="jsFormFilter" name="PageIndex"
+                       type="hidden" value="1" />
+            </li>
+            <li class="page-item-custom disabled jsPaginationLink">
+                <a class="page-link-custom bg-dark-mode-while bg-while" href=""
+                   data-index="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none" class="icon-qi icon-arrow-right icon-color-default">
+    <g opacity="0.9">
+        <g clip-path="url(#clip0_776_6156)">
+            <path d="M3.94413 9.05336L7.58266 5.41483C7.80318 5.19431 7.80318 4.9738 7.58266 4.75328C7.36214 4.53276 7.14162 4.53276 6.92111 4.75328L3.28258 8.39181C3.06206 8.61233 3.06206 8.83285 3.28258 9.05336C3.50309 9.27388 3.72361 9.27388 3.94413 9.05336Z" fill="#333F48" />
+            <path d="M3.28257 1.67264L6.9211 5.31117C7.14162 5.53169 7.36214 5.53169 7.58266 5.31117C7.80317 5.09066 7.80317 4.87014 7.58266 4.64962L3.94413 1.01109C3.72361 0.790574 3.50309 0.790574 3.28257 1.01109C3.06206 1.23161 3.06206 1.45213 3.28257 1.67264Z" fill="#333F48" />
+        </g>
+    </g>
+    <defs>
+        <clipPath id="clip0_776_6156">
+            <rect width="9.82353" height="9.82353" rx="4.91176" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0.0546875 9.94531)" fill="white" />
+        </clipPath>
+    </defs>
+</svg>
+                </a>
+            </li>
+        </ul>
+        <div class="text-h6 text-secondary">
+            <span class="d-none d-sm-inline">
+                trên
+            </span>
+            <span class="d-sm-none d-inline">
+                /
+            </span>
+            1
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        initCountTimeClassOnline();
+    });
+</script>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="jsLoading" class="loading-panel">
+        <div class="spinner-border avatar-lg text-primary" role="status"></div>
+    </div>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/js/layout.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/style_v2/js/main.js"></script>
+    <script src="https://848662053f.vws.vegacdn.vn/js/site.js"></script>
+    
+</body>
+</html> 
